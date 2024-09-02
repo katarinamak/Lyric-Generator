@@ -1,12 +1,13 @@
 from anthropic import Anthropic, HUMAN_PROMPT, AI_PROMPT
 import lyricsgenius as lg
+import os
 
-claude_api_key = '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'
+claude_api_key = os.environ["CLAUDE_API_KEY"]
 anthropic = Anthropic(api_key=claude_api_key)
 
 # lyrics genius: 
 
-lg_api_key = "_Wzou0-LX0KlIuo9xx90JHSQVgUbHCmTmOEm_XdH78iXxu7WOugacqrnSTbVwPB1"
+lg_api_key = os.environ["LG_API_KEY"]
 
 
 def get_lyrics(artist_name, album_name):
